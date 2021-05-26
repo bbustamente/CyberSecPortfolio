@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-!(Diagrams/Untitled-Diagram.png)
+![alt-text](https://github.com/bbustamente/CyberSecPortfolio/blob/86272b8900ecc561608c4cf22f893b708bb5ed31/Diagrams/Untitled%20Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -22,15 +22,14 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting traffic to the network.
-- _TODO: What aspect of security do load balancers protect? Availability, Web Traffic, Web Security What is the advantage of a jump box?_ Automation, Security, Network Segmentation, Access Control
+What aspect of security do load balancers protect? Availability, Web Traffic, Web Security What is the advantage of a jump box? Automation, Security, Network Segmentation, Access Control
 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
-- _TODO: What does Filebeat watch for?_Filebeat monitors the log files and collects log events, and sends to Elasticsearch or Logstash for indexing.
-- _TODO: What does Metricbeat record?_Metricbeat takes the metrics and statistics that it collects and sends them to Elasticsearch or Logstash.
+What does Filebeat watch for?_Filebeat monitors the log files and collects log events, and sends to Elasticsearch or Logstash for indexing.
+What does Metricbeat record?_Metricbeat takes the metrics and statistics that it collects and sends them to Elasticsearch or Logstash.
 
 The configuration details of each machine may be found below.
-_Note: Use the (http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
@@ -60,11 +59,11 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+What is the main advantage of automating configuration with Ansible?
 Ansible lets you easily deploy apps
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
+In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
 - SSH to Jumpbox
 - Install docker.io
 - Install pthyon-pip
@@ -77,17 +76,17 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+List the IP addresses of the machines you are monitoring_
 10.0.0.4
 10.0.0.5
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+Specify which Beats you successfully installed
 ELK, Web-1, Web-2 
 Filebeat and Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
 Log Events, System Stats and Metrics are all collected
 
 ### Using the Playbook
@@ -106,10 +105,9 @@ output.elasticsearch:
   host: "10.1.0.4:5601"
 - Run the playbook, and navigate to Kibana / Logs : Add log data / System logs / 5:Module Status to check that the installation worked.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_ .yml and to /files
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_ The config.yml 
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Which file is the playbook? Where do you copy it? 
+- .yml and to /files
+- Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+- The config.yml 
+- Which URL do you navigate to in order to check that the ELK server is running?
 sysadmin@10.1.0.4: curl Myhomeip:5601/app/kibana
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
