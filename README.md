@@ -86,8 +86,8 @@ ELK, Web-1, Web-2
 Filebeat and Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
-Log Events, System Stats and Metrics are all collected
+In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see.
+Log Events, System Stats and Metrics are all collected. One example would be an Auditbeat that would collect the user activity like identity breaches and malicious behavior.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
